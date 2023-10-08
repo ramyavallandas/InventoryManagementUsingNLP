@@ -1,0 +1,105 @@
+<div class="header">
+  <h1>SAYiT</h1>
+  <div class="search" >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fa fa-search search-ico"></i></span>
+      </div>
+      <input type="text" class="form-control" aria-label="Search here" placeholder="SEARCH HERE">
+      <div class="input-group-append">
+        <span class="input-group-text"><i class="fa fa-microphone microphone-ico"></i></span>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+  </div>
+  <span class="email">pandurangam@gmail.com</span>
+  <span class="icons">...other icons...</span>
+</div>
+
+
+
+
+
+
+
+<div class="main-content">
+  <h1>INVENTORY MANAGMENT</h1>
+  <!-- Add components or directives for each of the sections, like the product count, pie chart, bar chart, etc. -->
+  <div class = "sub-main">
+    <!-- Buttons -->
+    <button>Add Product</button>
+    <button>Remove Product</button>
+
+    <!-- Products Table -->
+    <table>
+      <thead>
+      <tr>
+        <th></th> <!-- For the checkbox -->
+        <th>Product Number</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Cost</th>
+        <th>Stock Quantity</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td><input type="checkbox"></td>
+        <td>{{ product.number }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.cost }}</td>
+        <td>{{ product.stockQuantity }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+  <button (click)="toggleChat()">ASK ME</button>
+
+  <!-- Chat window -->
+  <div *ngIf="showChat" class="chat-window">
+    <div class="chat-header">SAYiT Chat</div>
+    <div class="chat-content">
+      <!-- Display messages here -->
+    </div>
+    <div class="chat-input">
+      <input [(ngModel)]="userMessage" placeholder="Type your message...">
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+
+</div>
+

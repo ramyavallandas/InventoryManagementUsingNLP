@@ -1,0 +1,33 @@
+<div>
+    <!-- Buttons -->
+    <button>Add Product</button>
+    <button>Remove Products</button>
+
+
+
+    <!-- Products Table -->
+    <table>
+        <thead>
+        <tr>
+            <th></th> <!-- For the checkbox -->
+            <th>Product Number</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Stock Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+            <td><input type="checkbox"></td>
+            <td>{{ product.number }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.cost }}</td>
+            <td>{{ product.stockQuantity }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
